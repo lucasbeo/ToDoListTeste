@@ -170,7 +170,9 @@ form {
   <h2 style="margin:5px"> To Do List</h2>
   <input type="text" id="myInput" placeholder="Tarefa...">
   <span onclick="newElement()" class="addBtn">Adicionar</span><br><br>
-  <p>Lucas Brito & João Pedro Mello</p>
+  <p id="mostrar"></p>
+  <p id="mostrar2"></p>
+  <p id="mostrar3"></p>
   </div>
 
 
@@ -180,15 +182,15 @@ form {
   <h3 id="titulo"> Tela de Login </h3>
   <div id="login" style="background-color: aquamarine; width: 300px;">
     
-      Nome: <input class="secinput" type="text" name="nome" required>
+      Nome: <input class="secinput" type="text" id="nome" required>
       <br><br>
-      Login: <input class="secinput" type="text" name="login" required>
+      Login: <input class="secinput" type="text" id="usuario" required>
       <br><br>
-      Email: <input class="secinput" type="email" name="email" required>
+      Email: <input class="secinput" type="email" id="email" required>
       <br><br>
-      Senha: <input id="senha" class="secinput" type="password" name="senha" required>
+      Senha: <input id="senha" class="secinput" type="password" id="senha" required>
       <br><br>
-      Confirmar senha: <input id="senha2" class="secinput" type="password" name="senha2" required>
+      Confirmar senha: <input id="senha2" class="secinput" type="password" id="senha2" required>
       <br><br>
       <button id="botao" onclick="validar();"> Enviar </button>
      
@@ -205,9 +207,17 @@ function validar(){
   }
   else {
     alert("senhas diferentes");
-  }       
+  }
+  var nome = document.getElementById("nome").value;
+var email = document.getElementById("email");
+var usu = document.getElementById("usuario");
+
+var m1 = document.getElementById("mostrar");
+m1.innerText = nome;
+document.getElementById("mostrar2").innerHTML = email.value; 
+document.getElementById("mostrar3").innerHTML = usu.value;       
 }
-                     
+
  // document.getElementById("nome").value;
 var myNodelist = document.getElementsByTagName("LI");
 var i;
